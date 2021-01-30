@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Sanbercode</h1>
+
+    <div id="app">
+        <ul>
+            <li>
+                <comments v-for="comment in comments" :comment="comment"></comments>
+            </li>
+        </ul>
+
+        <textarea v-model="comment_text" cols="30" rows="10" @keyup.enter="postComment"></textarea>
+    </div>
+
+    <template id="comment-template">
+        <div class="">
+            <button type="button" v-on:click="tambah">+</button>
+            <div>{{comment.body}} || {{comment.time}} || Score : {{ score }} </div>
+            <button type="button" @click="kurang">-</button>
+            <br /><br />
+        </div>
+    </template>
+
+    <script src="vue.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
